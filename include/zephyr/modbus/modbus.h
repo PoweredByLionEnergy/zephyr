@@ -358,31 +358,31 @@ int modbus_write_holding_regs_fp(const int iface,
 /** Modbus Server User Callback structure */
 struct modbus_user_callbacks {
 	/** Coil read callback */
-	int (*coil_rd)(uint16_t addr, bool *state);
+	int (*coil_rd)(uint16_t addr, bool *state, void *user_data);
 
 	/** Coil write callback */
-	int (*coil_wr)(uint16_t addr, bool state);
+	int (*coil_wr)(uint16_t addr, bool state, void *user_data);
 
 	/** Discrete Input read callback */
-	int (*discrete_input_rd)(uint16_t addr, bool *state);
+	int (*discrete_input_rd)(uint16_t addr, bool *state, void *user_data);
 
 	/** Input Register read callback */
-	int (*input_reg_rd)(uint16_t addr, uint16_t *reg);
+	int (*input_reg_rd)(uint16_t addr, uint16_t *reg, void *user_data);
 
 	/** Floating Point Input Register read callback */
-	int (*input_reg_rd_fp)(uint16_t addr, float *reg);
+	int (*input_reg_rd_fp)(uint16_t addr, float *reg, void *user_data);
 
 	/** Holding Register read callback */
-	int (*holding_reg_rd)(uint16_t addr, uint16_t *reg);
+	int (*holding_reg_rd)(uint16_t addr, uint16_t *reg, void *user_data);
 
 	/** Holding Register write callback */
-	int (*holding_reg_wr)(uint16_t addr, uint16_t reg);
+	int (*holding_reg_wr)(uint16_t addr, uint16_t reg, void *user_data);
 
 	/** Floating Point Holding Register read callback */
-	int (*holding_reg_rd_fp)(uint16_t addr, float *reg);
+	int (*holding_reg_rd_fp)(uint16_t addr, float *reg, void *user_data);
 
 	/** Floating Point Holding Register write callback */
-	int (*holding_reg_wr_fp)(uint16_t addr, float reg);
+	int (*holding_reg_wr_fp)(uint16_t addr, float reg, void *user_data);
 };
 
 /**

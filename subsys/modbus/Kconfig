@@ -62,7 +62,7 @@ config MODBUS_RAW_ADU
 config MODBUS_NUMOF_RAW_ADU
 	int "Number of raw ADU instances"
 	depends on MODBUS_RAW_ADU
-	range 1 4
+	range 1 69
 	help
 	  Number of raw ADU instances.
 
